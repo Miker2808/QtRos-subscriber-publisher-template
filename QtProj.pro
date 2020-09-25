@@ -25,10 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    qnode.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    qnode.h
 
 FORMS += \
         mainwindow.ui
+
+unix: CONFIG += link_pkgconfig
+unix: PKGCONFIG += roscpp
+
+unix: CONFIG += link_pkgconfig
+unix: PKGCONFIG += std_msgs
